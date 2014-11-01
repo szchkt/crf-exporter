@@ -14,6 +14,15 @@
 		9075730319FC2A6F0044BB69 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9075730219FC2A6F0044BB69 /* Images.xcassets */; };
 		9075730619FC2A6F0044BB69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9075730419FC2A6F0044BB69 /* Main.storyboard */; };
 		9075731219FC2A6F0044BB69 /* CRF_ExporterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9075731119FC2A6F0044BB69 /* CRF_ExporterTests.m */; };
+		9075731D19FD06990044BB69 /* Variable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9075731C19FD06990044BB69 /* Variable.m */; };
+		9075732019FD07580044BB69 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9075731F19FD07580044BB69 /* NSObject+Extensions.m */; };
+		9075732319FD2C710044BB69 /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 9075732219FD2C710044BB69 /* Row.m */; };
+		9075732619FD2FFB0044BB69 /* IntegerValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9075732519FD2FFB0044BB69 /* IntegerValueTransformer.m */; };
+		9075732919FD30750044BB69 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9075732819FD30750044BB69 /* NSString+Extensions.m */; };
+		9075732D19FD39DF0044BB69 /* NSArrayController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9075732C19FD39DF0044BB69 /* NSArrayController+Extensions.m */; };
+		90CFC11119FEE52A0096E3BF /* Year.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC11019FEE52A0096E3BF /* Year.m */; };
+		90CFC11419FEE6B90096E3BF /* ValueDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC11319FEE6B90096E3BF /* ValueDictionary.m */; };
+		90CFC1171A002CA80096E3BF /* NSXMLElement+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC1161A002CA80096E3BF /* NSXMLElement+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +50,24 @@
 		9075730B19FC2A6F0044BB69 /* CRF ExporterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CRF ExporterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9075731019FC2A6F0044BB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9075731119FC2A6F0044BB69 /* CRF_ExporterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRF_ExporterTests.m; sourceTree = "<group>"; };
+		9075731B19FD06990044BB69 /* Variable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Variable.h; sourceTree = "<group>"; };
+		9075731C19FD06990044BB69 /* Variable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Variable.m; sourceTree = "<group>"; };
+		9075731E19FD07580044BB69 /* NSObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extensions.h"; sourceTree = "<group>"; };
+		9075731F19FD07580044BB69 /* NSObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extensions.m"; sourceTree = "<group>"; };
+		9075732119FD2C710044BB69 /* Row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Row.h; sourceTree = "<group>"; };
+		9075732219FD2C710044BB69 /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
+		9075732419FD2FFB0044BB69 /* IntegerValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerValueTransformer.h; sourceTree = "<group>"; };
+		9075732519FD2FFB0044BB69 /* IntegerValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerValueTransformer.m; sourceTree = "<group>"; };
+		9075732719FD30750044BB69 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		9075732819FD30750044BB69 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		9075732B19FD39DF0044BB69 /* NSArrayController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArrayController+Extensions.h"; sourceTree = "<group>"; };
+		9075732C19FD39DF0044BB69 /* NSArrayController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArrayController+Extensions.m"; sourceTree = "<group>"; };
+		90CFC10F19FEE52A0096E3BF /* Year.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Year.h; sourceTree = "<group>"; };
+		90CFC11019FEE52A0096E3BF /* Year.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Year.m; sourceTree = "<group>"; };
+		90CFC11219FEE6B90096E3BF /* ValueDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueDictionary.h; sourceTree = "<group>"; };
+		90CFC11319FEE6B90096E3BF /* ValueDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueDictionary.m; sourceTree = "<group>"; };
+		90CFC1151A002CA80096E3BF /* NSXMLElement+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+Extensions.h"; sourceTree = "<group>"; };
+		90CFC1161A002CA80096E3BF /* NSXMLElement+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,15 +109,26 @@
 		907572F419FC2A6F0044BB69 /* CRF Exporter */ = {
 			isa = PBXGroup;
 			children = (
+				9075732A19FD307F0044BB69 /* Categories */,
 				907572F719FC2A6F0044BB69 /* AppDelegate.h */,
 				907572F819FC2A6F0044BB69 /* AppDelegate.m */,
 				907572FC19FC2A6F0044BB69 /* ViewController.h */,
 				907572FD19FC2A6F0044BB69 /* ViewController.m */,
 				907572FF19FC2A6F0044BB69 /* Document.h */,
 				9075730019FC2A6F0044BB69 /* Document.m */,
+				9075731B19FD06990044BB69 /* Variable.h */,
+				9075731C19FD06990044BB69 /* Variable.m */,
+				9075732119FD2C710044BB69 /* Row.h */,
+				9075732219FD2C710044BB69 /* Row.m */,
+				90CFC10F19FEE52A0096E3BF /* Year.h */,
+				90CFC11019FEE52A0096E3BF /* Year.m */,
+				90CFC11219FEE6B90096E3BF /* ValueDictionary.h */,
+				90CFC11319FEE6B90096E3BF /* ValueDictionary.m */,
 				9075730219FC2A6F0044BB69 /* Images.xcassets */,
 				9075730419FC2A6F0044BB69 /* Main.storyboard */,
 				907572F519FC2A6F0044BB69 /* Supporting Files */,
+				9075732419FD2FFB0044BB69 /* IntegerValueTransformer.h */,
+				9075732519FD2FFB0044BB69 /* IntegerValueTransformer.m */,
 			);
 			path = "CRF Exporter";
 			sourceTree = "<group>";
@@ -119,6 +157,21 @@
 				9075731019FC2A6F0044BB69 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9075732A19FD307F0044BB69 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9075732B19FD39DF0044BB69 /* NSArrayController+Extensions.h */,
+				9075732C19FD39DF0044BB69 /* NSArrayController+Extensions.m */,
+				9075731E19FD07580044BB69 /* NSObject+Extensions.h */,
+				9075731F19FD07580044BB69 /* NSObject+Extensions.m */,
+				9075732719FD30750044BB69 /* NSString+Extensions.h */,
+				9075732819FD30750044BB69 /* NSString+Extensions.m */,
+				90CFC1151A002CA80096E3BF /* NSXMLElement+Extensions.h */,
+				90CFC1161A002CA80096E3BF /* NSXMLElement+Extensions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +275,16 @@
 			files = (
 				9075730119FC2A6F0044BB69 /* Document.m in Sources */,
 				907572FE19FC2A6F0044BB69 /* ViewController.m in Sources */,
+				9075732619FD2FFB0044BB69 /* IntegerValueTransformer.m in Sources */,
+				90CFC11119FEE52A0096E3BF /* Year.m in Sources */,
+				9075732919FD30750044BB69 /* NSString+Extensions.m in Sources */,
+				9075732319FD2C710044BB69 /* Row.m in Sources */,
+				9075731D19FD06990044BB69 /* Variable.m in Sources */,
+				90CFC11419FEE6B90096E3BF /* ValueDictionary.m in Sources */,
+				90CFC1171A002CA80096E3BF /* NSXMLElement+Extensions.m in Sources */,
+				9075732019FD07580044BB69 /* NSObject+Extensions.m in Sources */,
 				907572FB19FC2A6F0044BB69 /* main.m in Sources */,
+				9075732D19FD39DF0044BB69 /* NSArrayController+Extensions.m in Sources */,
 				907572F919FC2A6F0044BB69 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +472,7 @@
 				9075731719FC2A6F0044BB69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9075731819FC2A6F0044BB69 /* Build configuration list for PBXNativeTarget "CRF ExporterTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +481,7 @@
 				9075731A19FC2A6F0044BB69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

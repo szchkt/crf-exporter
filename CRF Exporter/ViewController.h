@@ -8,8 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@class Document;
 
+@interface ViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
+
+@property (nonatomic, readonly) Document *document;
+
+@property (strong) IBOutlet NSArrayController *yearsArrayController;
+
+@property (nonatomic) NSInteger selectedYearIndex;
+
+@property (weak) IBOutlet NSTableView *outputTableView;
+
+- (IBAction)browse:(id)sender;
+
+- (IBAction)updateWorksheets:(id)sender;
+
+- (IBAction)update:(id)sender;
 
 @end
-
