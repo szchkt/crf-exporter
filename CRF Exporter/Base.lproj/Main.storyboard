@@ -760,11 +760,19 @@
                                 </connections>
                             </popUpButton>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FI3-rP-UN1">
-                                <rect key="frame" x="605" y="13" width="81" height="32"/>
-                                <buttonCell key="cell" type="push" title="Export" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tVs-L6-GkC">
+                                <rect key="frame" x="592" y="13" width="94" height="32"/>
+                                <buttonCell key="cell" type="push" title="Export…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tVs-L6-GkC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="export:" target="5gI-5U-AMq" id="BPg-mk-z5l"/>
+                                    <binding destination="jGH-IL-u8E" name="enabled" keyPath="arrangedObjects.@count" id="zqf-NE-4fh">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">BoolValueTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
                             </button>
                             <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JX-Iw-A6c">
                                 <rect key="frame" x="245" y="302" width="435" height="102"/>
@@ -1223,7 +1231,7 @@
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DU9-NE-HtP">
-                                <rect key="frame" x="519" y="13" width="86" height="32"/>
+                                <rect key="frame" x="506" y="13" width="86" height="32"/>
                                 <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sQa-fG-gV2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>

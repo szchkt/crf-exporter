@@ -23,6 +23,9 @@
 		90CFC11119FEE52A0096E3BF /* Year.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC11019FEE52A0096E3BF /* Year.m */; };
 		90CFC11419FEE6B90096E3BF /* ValueDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC11319FEE6B90096E3BF /* ValueDictionary.m */; };
 		90CFC1171A002CA80096E3BF /* NSXMLElement+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC1161A002CA80096E3BF /* NSXMLElement+Extensions.m */; };
+		90CFC11A1A05692B0096E3BF /* BoolValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC1191A05692B0096E3BF /* BoolValueTransformer.m */; };
+		90CFC11D1A056B680096E3BF /* VariableRowTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC11C1A056B680096E3BF /* VariableRowTuple.m */; };
+		90CFC1201A0570A70096E3BF /* NSXMLNode+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CFC11F1A0570A70096E3BF /* NSXMLNode+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,12 @@
 		90CFC11319FEE6B90096E3BF /* ValueDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueDictionary.m; sourceTree = "<group>"; };
 		90CFC1151A002CA80096E3BF /* NSXMLElement+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+Extensions.h"; sourceTree = "<group>"; };
 		90CFC1161A002CA80096E3BF /* NSXMLElement+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+Extensions.m"; sourceTree = "<group>"; };
+		90CFC1181A05692B0096E3BF /* BoolValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoolValueTransformer.h; sourceTree = "<group>"; };
+		90CFC1191A05692B0096E3BF /* BoolValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoolValueTransformer.m; sourceTree = "<group>"; };
+		90CFC11B1A056B680096E3BF /* VariableRowTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableRowTuple.h; sourceTree = "<group>"; };
+		90CFC11C1A056B680096E3BF /* VariableRowTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableRowTuple.m; sourceTree = "<group>"; };
+		90CFC11E1A0570A70096E3BF /* NSXMLNode+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLNode+Extensions.h"; sourceTree = "<group>"; };
+		90CFC11F1A0570A70096E3BF /* NSXMLNode+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLNode+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +129,8 @@
 				9075731C19FD06990044BB69 /* Variable.m */,
 				9075732119FD2C710044BB69 /* Row.h */,
 				9075732219FD2C710044BB69 /* Row.m */,
+				90CFC11B1A056B680096E3BF /* VariableRowTuple.h */,
+				90CFC11C1A056B680096E3BF /* VariableRowTuple.m */,
 				90CFC10F19FEE52A0096E3BF /* Year.h */,
 				90CFC11019FEE52A0096E3BF /* Year.m */,
 				90CFC11219FEE6B90096E3BF /* ValueDictionary.h */,
@@ -129,6 +140,8 @@
 				907572F519FC2A6F0044BB69 /* Supporting Files */,
 				9075732419FD2FFB0044BB69 /* IntegerValueTransformer.h */,
 				9075732519FD2FFB0044BB69 /* IntegerValueTransformer.m */,
+				90CFC1181A05692B0096E3BF /* BoolValueTransformer.h */,
+				90CFC1191A05692B0096E3BF /* BoolValueTransformer.m */,
 			);
 			path = "CRF Exporter";
 			sourceTree = "<group>";
@@ -170,6 +183,8 @@
 				9075732819FD30750044BB69 /* NSString+Extensions.m */,
 				90CFC1151A002CA80096E3BF /* NSXMLElement+Extensions.h */,
 				90CFC1161A002CA80096E3BF /* NSXMLElement+Extensions.m */,
+				90CFC11E1A0570A70096E3BF /* NSXMLNode+Extensions.h */,
+				90CFC11F1A0570A70096E3BF /* NSXMLNode+Extensions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -277,9 +292,12 @@
 				907572FE19FC2A6F0044BB69 /* ViewController.m in Sources */,
 				9075732619FD2FFB0044BB69 /* IntegerValueTransformer.m in Sources */,
 				90CFC11119FEE52A0096E3BF /* Year.m in Sources */,
+				90CFC1201A0570A70096E3BF /* NSXMLNode+Extensions.m in Sources */,
 				9075732919FD30750044BB69 /* NSString+Extensions.m in Sources */,
 				9075732319FD2C710044BB69 /* Row.m in Sources */,
 				9075731D19FD06990044BB69 /* Variable.m in Sources */,
+				90CFC11A1A05692B0096E3BF /* BoolValueTransformer.m in Sources */,
+				90CFC11D1A056B680096E3BF /* VariableRowTuple.m in Sources */,
 				90CFC11419FEE6B90096E3BF /* ValueDictionary.m in Sources */,
 				90CFC1171A002CA80096E3BF /* NSXMLElement+Extensions.m in Sources */,
 				9075732019FD07580044BB69 /* NSObject+Extensions.m in Sources */,

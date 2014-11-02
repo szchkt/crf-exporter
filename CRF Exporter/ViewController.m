@@ -11,10 +11,12 @@
 #import "Document.h"
 #import "Row.h"
 #import "Variable.h"
+#import "VariableRowTuple.h"
 #import "Year.h"
 #import "ValueDictionary.h"
 #import "NSArrayController+Extensions.h"
 #import "NSXMLElement+Extensions.h"
+#import "NSXMLNode+Extensions.h"
 
 typedef NS_ENUM(NSInteger, ViewControllerButton) {
     ViewControllerButtonBrowseSource = 1,
@@ -86,6 +88,7 @@ typedef NS_ENUM(NSInteger, ViewControllerButton) {
     NSError *error = nil;
     NSXMLDocument *sourceDocument = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL fileURLWithPath:document.sourceFilePath] options:0 error:&error];
     if (!sourceDocument) {
+        [NSApp presentError:error modalForWindow:self.view.window delegate:nil didPresentSelector:NULL contextInfo:NULL];
         NSLog(@"%@", error);
         return;
     }
@@ -115,6 +118,7 @@ typedef NS_ENUM(NSInteger, ViewControllerButton) {
     NSError *error = nil;
     NSXMLDocument *sourceDocument = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL fileURLWithPath:document.sourceFilePath] options:0 error:&error];
     if (!sourceDocument) {
+        [NSApp presentError:error modalForWindow:self.view.window delegate:nil didPresentSelector:NULL contextInfo:NULL];
         NSLog(@"%@", error);
         return;
     }
@@ -205,6 +209,105 @@ typedef NS_ENUM(NSInteger, ViewControllerButton) {
     }
 
     [self.outputTableView reloadData];
+}
+
+- (IBAction)export:(id)sender
+{
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    savePanel.canCreateDirectories = YES;
+    savePanel.allowedFileTypes = @[@"xml"];
+    savePanel.allowsOtherFileTypes = NO;
+
+    [savePanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
+        if (result == NSFileHandlingPanelOKButton) {
+            [self exportToFilePath:[savePanel.URL path]];
+        }
+    }];
+}
+
+- (void)exportToFilePath:(NSString *)targetFilePath
+{
+    Document *document = self.document;
+
+    NSError *error = nil;
+    NSXMLDocument *profileDocument = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL fileURLWithPath:document.partyProfileFilePath] options:0 error:&error];
+    if (!profileDocument) {
+        [NSApp presentError:error modalForWindow:self.view.window delegate:nil didPresentSelector:NULL contextInfo:NULL];
+        NSLog(@"%@", error);
+        return;
+    }
+
+    NSMutableDictionary *years = [[NSMutableDictionary alloc] initWithCapacity:[self.yearsArrayController.content count]];
+
+    for (Year *year in self.yearsArrayController.content) {
+        years[@(year.year)] = year;
+    }
+
+    NSMutableDictionary *tuples = [[NSMutableDictionary alloc] init];
+
+    for (Variable *variable in document.variables) {
+        for (Row *row in document.rows) {
+            NSString *name = [NSString stringWithFormat:@"[%@][%@][%@][%@][%@][%@][%@][%@][%@][%@]",
+                              row.category,
+                              row.classification,
+                              variable.name,
+                              row.method,
+                              row.target,
+                              row.option,
+                              row.type,
+                              variable.measure,
+                              row.gas,
+                              variable.unit];
+            tuples[name] = [VariableRowTuple tupleWithVariable:variable row:row];
+        }
+    }
+
+    NSXMLElement *rootElement = [profileDocument rootElement];
+    NSXMLElement *variablesElement = [[rootElement elementsForName:@"variables"] firstObject];
+
+    NSUInteger filledCount = 0;
+    NSUInteger missingCount = 0;
+    NSUInteger errorCount = 0;
+
+    for (NSXMLElement *variableElement in [variablesElement elementsForName:@"variable"]) {
+        NSString *variableName = [[variableElement attributeForName:@"name"] stringValue];
+
+        VariableRowTuple *tuple = tuples[variableName];
+        if (tuple) {
+            NSXMLElement *yearsElement = [[variableElement elementsForName:@"years"] firstObject];
+
+            for (NSXMLElement *yearElement in [yearsElement elementsForName:@"year"]) {
+                NSInteger yearValue = [[yearElement attributeForName:@"name"] integerValue];
+                Year *year = years[@(yearValue)];
+                ValueDictionary *values = year[tuple.row];
+                NSNumber *value = values[tuple.variable];
+
+                if (value) {
+                    NSXMLElement *recordElement = [[yearElement elementsForName:@"record"] firstObject];
+                    NSXMLElement *valueElement = [[recordElement elementsForName:@"value"] firstObject];
+
+                    if (valueElement) {
+                        [valueElement setStringValue:[value stringValue]];
+
+                        filledCount++;
+                    } else {
+                        NSLog(@"Warning: no value element found for %@, %ld", variableName, (long)yearValue);
+
+                        errorCount++;
+                    }
+                } else {
+                    NSLog(@"Missing value for %@, %ld", variableName, (long)yearValue);
+                    missingCount++;
+                }
+            }
+        } else {
+            [variablesElement removeChildAtIndex:variableElement.index];
+        }
+    }
+
+    NSLog(@"Filled %lu values, %lu missing, %lu failed", (unsigned long)filledCount, (unsigned long)missingCount, (unsigned long)errorCount);
+
+    [[profileDocument XMLDataWithOptions:NSXMLNodePrettyPrint] writeToFile:targetFilePath atomically:YES];
 }
 
 #pragma mark - Table View Data Source
