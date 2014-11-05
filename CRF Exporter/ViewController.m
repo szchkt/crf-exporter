@@ -269,6 +269,8 @@ typedef NS_ENUM(NSInteger, ViewControllerButton) {
     NSUInteger missingCount = 0;
     NSUInteger errorCount = 0;
 
+    NSDecimalNumber *nan = [NSDecimalNumber notANumber];
+
     for (NSXMLElement *variableElement in [variablesElement elementsForName:@"variable"]) {
         NSString *variableName = [[variableElement attributeForName:@"name"] stringValue];
 
@@ -282,7 +284,7 @@ typedef NS_ENUM(NSInteger, ViewControllerButton) {
                 ValueDictionary *values = year[tuple.row];
                 NSNumber *value = values[tuple.variable];
 
-                if (value) {
+                if (value && ![value isEqualToNumber:nan]) {
                     NSXMLElement *recordElement = [[yearElement elementsForName:@"record"] firstObject];
                     NSXMLElement *valueElement = [[recordElement elementsForName:@"value"] firstObject];
 
