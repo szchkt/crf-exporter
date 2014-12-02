@@ -250,14 +250,14 @@ typedef NS_ENUM(NSInteger, ViewControllerButton) {
             NSString *name = [NSString stringWithFormat:@"[%@][%@][%@][%@][%@][%@][%@][%@][%@][%@]",
                               row.category,
                               row.classification,
+                              variable.measure,
+                              row.gas,
+                              variable.unit,
                               variable.name,
                               row.method,
                               row.target,
                               row.option,
-                              row.type,
-                              variable.measure,
-                              row.gas,
-                              variable.unit];
+                              row.type];
             tuples[name] = [VariableRowTuple tupleWithVariable:variable row:row];
         }
     }
